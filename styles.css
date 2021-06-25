@@ -87,6 +87,11 @@ h1 {
   cursor: pointer;
 }
 
+.question:hover,
+.selected:hover {
+  color: hsl(14, 88%, 65%);
+}
+
 .carrot {
   padding: 0 1rem;
 }
