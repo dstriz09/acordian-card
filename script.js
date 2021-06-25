@@ -1,32 +1,17 @@
-let one = document.querySelector("#one");
-let two = document.querySelector("#two");
-let three = document.querySelector("#three");
-let four = document.querySelector("#four");
-let five = document.querySelector("#five");
 let allQuestions = document.querySelectorAll(".question-group");
 
-one.addEventListener("click", () => {
-  handleClick(one);
-});
-two.addEventListener("click", () => {
-  handleClick(two);
-});
-three.addEventListener("click", () => {
-  handleClick(three);
-});
-four.addEventListener("click", () => {
-  handleClick(four);
-});
-five.addEventListener("click", () => {
-  handleClick(five);
+allQuestions.forEach((question_block) => {
+  let question = question_block.children[0].children[0];
+  let carrot = question_block.children[0].children[1];
+  let answer = question_block.children[1];
+
+  question_block.addEventListener("click", () => {
+    handleClick(question_block, question, carrot, answer);
+  });
 });
 
-const handleClick = (element) => {
-  findShownElements(element);
-  let question = element.children[0].children[0];
-  let carrot = element.children[0].children[1];
-  let answer = element.children[1];
-
+const handleClick = (question_block, question, carrot, answer) => {
+  findShownElements(question_block);
   if (answer.classList.contains("hidden")) {
     answer.classList.remove("hidden");
     carrot.classList.add("visible");
@@ -38,9 +23,9 @@ const handleClick = (element) => {
   }
 };
 
-const findShownElements = (element) => {
+const findShownElements = (question_block) => {
   allQuestions.forEach((question) => {
-    if (question === element) return;
+    if (question === question_block) return;
 
     let children = question.children;
 
