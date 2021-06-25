@@ -118,7 +118,7 @@ p.selected {
   .at {
     top: -5rem;
     height: 10rem;
-    left: 20%;
+    left: 4rem;
   }
 
   main {
@@ -126,6 +126,7 @@ p.selected {
     justify-content: center;
     align-items: center;
     max-height: 80vh;
+    width: 40rem;
   }
 
   .image {
